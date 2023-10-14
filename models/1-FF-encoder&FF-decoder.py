@@ -30,7 +30,7 @@ logdir='log_out_path'
 
 
 # Load Data
-rnaseq_file = os.path.join('datasets/log2tpm+1_mad_gene_0_1_scaled_9568samples_10240genes.csv')
+rnaseq_file = os.path.join('data/FF_TCGA_gene_expression_9568samples_10240genes.csv')
 rnaseq_df = pd.read_csv(rnaseq_file, index_col=0)
 
 original_dim = rnaseq_df.shape[1]

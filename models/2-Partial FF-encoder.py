@@ -39,7 +39,7 @@ logdir='log_out_path'
 
 
 # Load Data
-rnaseq_file = os.path.join('data/log2tpm+1_mad_gene_0_1_scaled_9568samples_1024genes_net2_model5.csv')
+rnaseq_file = os.path.join('data/FF_TCGA_gene_expression_9568samples_1024genes_AMC_CRC_12.csv')
 rnaseq_1024_df = pd.read_csv(rnaseq_file, index_col=0)
 
 type(rnaseq_1024_df)
@@ -48,7 +48,7 @@ original_dim  # 1024
 
 rnaseq_1024_df_tolist = rnaseq_1024_df.values.tolist()
 
-train_index_file = os.path.join(dir_prefix+'15_reprocess_20201105/output/v5x_train_original_row_number.csv')
+train_index_file = os.path.join('.../train_original_row_number.csv')
 x_train_original_index = pd.read_csv(train_index_file, header=None)
 
 x_train_original = []
@@ -58,7 +58,7 @@ for i in range(len(x_train_original_index)):
 x_train_original_toarr = np.array(x_train_original)
 print('x train original dim', x_train_original_toarr.shape)  # 8611*1024
 
-test_index_file = os.path.join(dir_prefix+'15_reprocess_20201105/output/v5x_test_original_row_number.csv')
+test_index_file = os.path.join('.../test_original_row_number.csv')
 test_index_df = pd.read_csv(test_index_file,  header=None) 
 x_test_original_index = test_index_df
 
@@ -77,7 +77,7 @@ x_test_noisy = noise_factor1 * x_test + noise_factor2 * np.random.normal(loc=mea
 
 
 # Using the features from FF-encoder to train partial FF-encoder
-rnaseq_file = os.path.join(dir_prefix+'15_reprocess_20201105/gene_expression_processed/log2tpm+1_mad_gene_0_1_scaled_9568samples_10240genes.csv')
+rnaseq_file = os.path.join('data/FF_TCGA_gene_expression_9568samples_10240genes.csv')
 rnaseq_flat_recovered_from_1024inputdf = pd.read_csv(rnaseq_file, index_col=0)
 print('1st stage input dim', rnaseq_flat_recovered_from_1024inputdf.shape)
 rnaseq_flat_recovered_from_1024inputdf_tolist = rnaseq_flat_recovered_from_1024inputdf.values.tolist()
@@ -99,7 +99,7 @@ x_test_for_pred = np.array(x_test_for_pred)
 print('x test for predict', x_test_for_pred.shape) # 957
 x_test_predc = np.reshape(x_test_for_pred, (len(x_test_for_pred), img_rows, img_cols, 1))
 
-loaded_encoder = load_model("trained_models/v5encoder.h5")
+loaded_encoder = load_model("encoder.h5")
 pedicted_features_in_train = loaded_encoder.predict(x_train_predc)
 pedicted_features_in_test = loaded_encoder.predict(x_test_predc)
 
