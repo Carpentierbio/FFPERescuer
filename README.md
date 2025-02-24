@@ -1,4 +1,4 @@
-# FFPE-rescuer
+# FFPERescuer
 
 ## **Introduction**
 
