@@ -6,7 +6,7 @@ The repository provides a convolutional autoencoder for recovery of formalin-fix
 
 FFPE tissue samples often show degradation of RNA due to fixation and storage processes; consequently, the RNA-sequencing data from FFPE samples for molecular analysis of cancer are not comparable to those obtained from fresh frozen (FF) tissues. We developed a deep learning (DL)-based framework that used 9568 FF primary tumor samples from The Cancer Genome Atlas across 28 cancer types and the given dataset to recover gene expression profiles in a given FFPE dataset.
 
-<img src="https://github.com/Carpentierbio/FFPE-rescuer/blob/main/image/FFPERescuer.jpg" alt="workflow" width="80%">
+<img src="https://github.com/Carpentierbio/FFPERescuer/blob/main/image/FFPERescuer.jpg" alt="workflow" width="80%">
 
 **Figure 1 Constructing a reconstruction network using CNN for FFPE-derived RNA-seq data.** 
 
