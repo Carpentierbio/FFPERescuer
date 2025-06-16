@@ -7,7 +7,7 @@ The repository provides a deep learning framework for reconstructing formalin-fi
 
 FFPE tissue samples often show RNA degradation due to fixation and storage processes; consequently, the RNA-sequencing data from FFPE samples for molecular analysis of cancer are not comparable to those obtained from fresh frozen (FF) tissues. We developed a deep learning (DL)-based framework that used 9568 FF primary tumor samples from The Cancer Genome Atlas across 28 cancer types and the given dataset to reconstruct gene expression profiles in a given FFPE dataset.
 
-<img src="https://github.com/Carpentierbio/FFPERescuer/blob/main/image/FFPERescuer.jpg" alt="workflow" width="80%">
+<img src="https://github.com/Carpentierbio/FFPERescuer/blob/main/image/FFPERescuer.jpg" alt="workflow" width="100%">
 
 **Figure 1 Unsupervised domain adaptation for FFPE-derived RNA-seq profile reconstruction.** 
 
